@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="D:\development\apache-maven-3.2.1\repository\mysql\mysql-connector-java\5.1.21\mysql-connector-java-5.1.21.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.50.34:3306/ci_data" userId="root" password="obanks" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="cn.obanks.p2p.model" targetProject="p2p">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator targetPackage="cn.obanks.p2p.mapper" targetProject="p2p">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<javaClientGenerator targetPackage="cn.obanks.p2p.mapper" targetProject="p2p" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+			<!-- <table tableName="AREA" domainObjectName="Area" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="CHANNEL" domainObjectName="Channel" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="DEPT" domainObjectName="Dept" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="TRADE" domainObjectName="Trade" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="PRODUCT_INFO" domainObjectName="ProductInfo" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			 <!-- <table tableName="MERCHANT" domainObjectName="Merchant" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!--  <table tableName="REAL_NAME_AUTH_RECORD" domainObjectName="RealNnameAuthRecord" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="CUSTOMER" domainObjectName="Customer" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table>
+			<table tableName="PROVIDER" domainObjectName="Provider" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table>
+			<table tableName="TEMPLATE" domainObjectName="Template" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="CUSTOMER_PROVIDER_REF" domainObjectName="CustomerProviderRef" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<!-- <table tableName="TEMPLATE_REF" domainObjectName="TemplateRef" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table> -->
+			<table tableName="SEND_MSG_RECORD" domainObjectName="SendMsgRecord" enableSelectByExample="false" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false"></table>
+		</context>
+</generatorConfiguration>  

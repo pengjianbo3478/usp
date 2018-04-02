@@ -1,0 +1,14 @@
+/* COMMON CSS DOCUMENT */
+.layer_s{width:538px;  height:268px}
+.layer_s .layer_connbox{ width:520px; height:250px; margin:7px; background:#fff;border:2px solid #309de6;z-index:102; position:absolute}
+.layer_s .layer_connbox .layer_tit{ font:500 18px/60px "Microsoft YaHei"; text-align:center; background:#309de6; color:#fff; margin-bottom:10px}
+.layer_s .layer_connbox .txt{ text-align:center; font:500 16px/30px "Microsoft YaHei"; padding:20px 0}
+.layer_s .layer_connbox .layer_btn_l{ height:40px; padding:20px 125px 0 125px; }
+.layer_s .layer_connbox .ml_btn_a{width:100px; height:34px; background:#ffba26;font:500 14px/34px "Microsoft YaHei"; color:#fff; text-align:center; cursor:pointer; border-radius:2px; display:inline-block; float:left;margin-right: 10px;}
+.layer_s .layer_connbox .ml_btn_b{ float:right}
+.layer_s .layer_connbox .ml_btn_a:hover{background:#fc8720; text-decoration:none}
+#cboxOverlay{ width:100%; height:100%; position:fixed; z-index:1; background:#000}
+#colorbox{ z-index:101; position:absolute}
+#cboxLoadedContent{ position:relative}
+#layer_bg{ width:100%; height:100%; position:absolute; left:0; right:0;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#33000000', endColorstr='#33000000');background:rgba(0,0,0,0.2);z-index:101; border-radius:5px}
+#cboxClose{ position:absolute; right:33px;top:30px; z-index:102; color:#fff; cursor:pointer}

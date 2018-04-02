@@ -1,0 +1,208 @@
+/* CSS Document */
+
+/*reset.css*/
+
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0; font-family:"Microsoft Yahei";}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font-family:"Microsoft Yahei";outline:0;}
+body{background:#fff;}
+a,a:hover{color:#333;}
+
+/*reset.css-end*/
+
+
+.fl{ float:left}
+.fr{ float:right}
+.clear{ clear:both;}
+
+.windows{
+	margin:0;
+	padding:0;
+	width:640px;
+	height:1136px;
+}
+
+.container{
+	width:100%;
+	height:100%;
+	background:#09C url(../images/index-lesson.jpg) left top no-repeat ;
+}
+
+.home-header{
+	height:128px;
+	width:100%;
+}
+
+.home-nav{
+	width:100%;
+	height:90px;
+	cursor:pointer;
+}
+.home-nav.add{
+	background:url(../images/index-original.jpg) no-repeat left top;
+}
+.home-nav a{
+	width:50%;
+	height:90px;
+	float:left;
+	display:block;
+}
+.scroll-content{
+	margin:0 auto;
+	width:660px;
+	height:820px;
+}
+
+.sub-block{
+	margin:0 auto;
+	width:625px;
+}
+
+.sub-title{
+	margin-top:25px;
+	width:100%;
+	height:50px;
+	font-size:30px;
+	color:#FFF;
+	overflow:hidden;
+}
+
+.recommend{
+	width:100%;
+	height:310px;
+	margin-top:15px;
+	position:relative;
+	cursor: pointer;
+}
+.re-title{
+	position:absolute;
+	left:0;
+	bottom:0;
+	background:#000;
+	background:rgba(0,0,0,0.7);
+	font-size:21px;
+	color:#FFF;
+	width:100%;
+	height:45px;
+	line-height:45px;
+	text-indent:5px;
+	border-bottom:1px solid #ff7e00;
+}
+
+.triangle-br{
+    width: 0;
+    height: 0;
+    border-bottom: 45px solid #ff7e00;
+    border-left: 30px solid transparent;
+}
+
+.bgcolor-org{
+	padding:0 10px 0 5px;
+	background:#ff7e00;
+}
+
+.lesson-bl{
+	height:168px;
+	width:100%;
+	margin-top:15px;
+}
+
+.lpic{
+	position:relative;
+	height:168px;
+	width:300px;
+	cursor: pointer;
+}
+
+.lpic-title{
+	position:absolute;
+	left:0;
+	bottom:0;
+	background:#000;
+	background:rgba(0,0,0,0.7);
+	font-size:21px;
+	color:#FFF;
+	width:100%;
+	height:34px;
+	line-height:34px;
+	text-indent:5px;
+	overflow:hidden;
+}
+.hr-sp{
+	margin-top:20px;
+	color:rgba(255,255,255,0.2);
+}
+
+.banner-box{
+	height: 310px;
+	position: relative;
+	background:#ccc;
+	text-align:center;
+	width:640px;
+}
+.banner-box .bd {
+	width:640px;
+	height: 310px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+}
+.banner-box .bd ul{
+	width:100% !important;
+}
+.banner-box .bd li {
+	width: 100% !important;
+	height: 310px;
+	margin:0 auto;
+	background:#39C;
+	cursor: pointer;
+}
+
+.banner-btn {
+	width:100%;
+	height:15px;
+	position: absolute;
+	left:0;
+	bottom:0;
+	text-align:center;
+}
+.banner-box .hd ul{
+	width:auto;
+	margin:0 auto;
+	height:100%;
+}
+.banner-box .hd ul li {
+	width: 12px;
+	height: 12px;
+	border-radius : 50%;
+	text-indent: -9999px;
+	margin-right: 20px;
+	background: #4e647e;
+	display:inline-block;
+	cursor: pointer;
+	zoom:1;
+}
+.banner-box .hd ul li.on {
+	background: #43d5bb;
+}
+.toggle img{
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}

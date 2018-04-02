@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="commonSelectList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="cn.obanks.common.Item">
+					<constructor-arg index="0">
+						<value>0</value>
+					</constructor-arg>
+					<constructor-arg index="1">
+						<value>不允许</value>
+					</constructor-arg>
+				</bean>
+				<bean class="cn.obanks.common.Item">
+					<constructor-arg index="0">
+						<value>1</value>
+					</constructor-arg>
+					<constructor-arg index="1">
+						<value>允许</value>
+					</constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="realNameResponseCodeMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="00">
+					<value>success</value>
+				</entry>
+				<entry key="01">
+					<value>签名无效</value>
+				</entry>
+				<entry key="02">
+					<value>商户不存在</value>
+				</entry>
+				<entry key="03">
+					<value>卡号为空</value>
+				</entry>
+				<entry key="04">
+					<value>身份证为空</value>
+				</entry>
+				<entry key="05">
+					<value>客户号为空</value>
+				</entry>
+				<entry key="06">
+					<value>订单号为空</value>
+				</entry>
+				<entry key="07">
+					<value>手机号为空</value>
+				</entry>
+				<entry key="08">
+					<value>签名为空</value>
+				</entry>
+				<entry key="09">
+					<value>用户名为空</value>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="sendMsgResponseCodeMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="00">
+					<value>success</value>
+				</entry>
+				<entry key="01">
+					<value>客户号不存在</value>
+				</entry>
+				<entry key="02">
+					<value>模板不存在</value>
+				</entry>
+				<entry key="03">
+					<value>调用短信接口无返回</value>
+				</entry>
+				<entry key="04">
+					<value>签名无效</value>
+				</entry>
+				<entry key="05">
+					<value>客户号为空</value>
+				</entry>
+				<entry key="06">
+					<value>手机号为空</value>
+				</entry>
+				<entry key="07">
+					<value>签名为空</value>
+				</entry>
+				<entry key="08">
+					<value>模板号为空</value>
+				</entry>
+				<entry key="09">
+					<value>短信内容为空</value>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	
+	
+	
+</beans>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.obanks.usp.mapper.TemplateRefMapper">
+
+	<resultMap id="BaseResultMap" type="cn.obanks.usp.model.TemplateRef">
+		<id column="ID" jdbcType="BIGINT" property="id" />
+		<result column="PROVIDER_ID" jdbcType="BIGINT" property="providerId" />
+		<result column="TEMPLATE_ID" jdbcType="BIGINT" property="templateId" />
+		<result column="CODE" jdbcType="BIGINT" property="code" />
+		<result column="CREATED_BY" jdbcType="BIGINT" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="UPDATED_BY" jdbcType="BIGINT" property="updatedBy" />
+		<result column="UPDATED_DATE" jdbcType="TIMESTAMP" property="updatedDate" />
+		<result column="DELETED_FLAG" jdbcType="CHAR" property="deletedFlag" />
+	</resultMap>
+
+	<select id="search" parameterType="cn.obanks.usp.model.TemplateRef" resultMap="BaseResultMap">
+		SELECT * FROM TEMPLATE_REF WHERE PROVIDER_ID = #{providerId,jdbcType=BIGINT} AND TEMPLATE_ID = #{templateId,jdbcType=BIGINT}
+	</select>
+
+	<insert id="add" parameterType="cn.obanks.usp.model.TemplateRef">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+		INSERT INTO TEMPLATE_REF (
+		ID,
+		PROVIDER_ID,
+		TEMPLATE_ID,
+		CODE,
+		CREATED_BY,
+		CREATED_DATE,
+		UPDATED_BY,
+		UPDATED_DATE,
+		DELETED_FLAG
+		)
+		VALUES
+		(
+		#{id,jdbcType=BIGINT}, #{providerId,jdbcType=BIGINT}, #{templateId,jdbcType=BIGINT},
+		#{code,jdbcType=BIGINT}, #{createdBy,jdbcType=BIGINT}, #{createdDate,jdbcType=TIMESTAMP},
+		#{updatedBy,jdbcType=BIGINT}, #{updatedDate,jdbcType=TIMESTAMP}, #{deletedFlag,jdbcType=CHAR}
+		)
+	</insert>
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/views/layouts/baselayout.jsp">
+		<put-attribute name="title" value="obanks" />
+		<put-attribute name="header" value="/WEB-INF/views/layouts/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/layouts/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/layouts/body.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layouts/footer.jsp" />
+	</definition>
+
+	<definition name="*/*/list" template="/WEB-INF/views/layouts/paginatelayout.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/{2}/list.jsp" />
+		<put-attribute name="paginate" value="/WEB-INF/views/jsp/common/paginate4ajax.jsp" />
+	</definition>
+
+	<definition name="login/*" template="/WEB-INF/views/layouts/loginlayout.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/login/{1}.jsp" />
+	</definition>
+
+	<definition name="*/*" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="*/window/*" template="/WEB-INF/views/layouts/windowlayout.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/jsp/{1}/window/{2}.jsp" />
+	</definition>
+
+</tiles-definitions>

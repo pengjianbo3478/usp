@@ -1,0 +1,400 @@
+@charset "utf-8";
+/* CSS Document */
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.Vint_pages {
+	font: 12px Helvetica, Arial, sans-serif;
+	font-family: Verdana;
+	height: auto;
+	padding: 3px;
+	overflow: hidden;
+	text-align: right;
+	width: 99%;
+	margin: 15px auto 0;
+	margin-right: 30px;
+}
+
+.Vint_pages a,.Vint_pages b,.Vint_pages span {
+	height: 26px;
+	line-height: 26px;
+	margin: 0;
+	padding: 0 10px;
+	display: inline-block;
+}
+
+.Vint_pages span {
+	color: #999;
+}
+
+.Vint_pages span.page_disabled {
+	border: 1px solid #ddd;
+}
+
+.Vint_pages a,.Vint_pages b {
+	margin-left: 3px;
+	color: #333;
+	text-decoration: none;
+	border: 1px solid #dbdbdb;
+	background-color: #f1f1f1;
+}
+
+.Vint_pages b,.Vint_pages a:hover {
+	color: #c30000;
+	text-decoration: none;
+	background: #fff;
+}
+
+.Vint_pages .pages_first,.Vint_pages .pages_pre,.Vint_pages .pages_next,.Vint_pages .pages_last
+	{
+	color: #333;
+	font-weight: bold;
+}
+
+.Vint_pages .pages_first:hover,.Vint_pages .pages_pre:hover,.Vint_pages .pages_next:hover,.Vint_pages .pages_last:hover
+	{
+	color: #c30000;
+}
+
+.Vint_pages a.pages_first,.Vint_pages a.pages_pre {
+	padding: 0 14px;
+}
+
+.Vint_pages a.pages_next,.Vint_pages a.pages_last {
+	padding: 0 14px;
+}
+
+.Vint_pages input {
+	width: 30px;
+	height: 18px;
+	line-height: 18px;
+	margin: 0;
+	margin-left: 3px;
+	padding: 0 !important;
+	color: #666666;
+	text-align: center;
+	border: 1px solid #BDCFDD !important;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	background: #F4F8FB !important;
+}
+
+.Vint_pages input.pages_btn {
+	width: auto;
+	height: 20px;
+	line-height: 16px;
+	_height: 15px;
+	_line-height: 15px;
+	margin: 0;
+	margin-left: 3px;
+	padding: 0 5px !important;
+	overflow: visible;
+	cursor: pointer;
+}
+
+.Vint_pages select {
+	font-size: 12px;
+	*font-size: 11px;
+	width: auto;
+	min-width: 50px;
+	padding: 0;
+	margin-left: 3px;
+	border: 1px solid #BDCFDD;
+	background-color: #F9F9F9;
+}
+
+.paginate_loading {
+	width: auto;
+	height: auto;
+	background: #404040;
+	background: url(../images/loading.gif) no-repeat center;
+}
+
+/* 推荐页面-音乐课 */
+.right-side {
+	color: #ceddea;
+}
+
+.title-right {
+	font-size: 30px;
+	font-weight: normal;
+	height: 50px;
+	line-height: 50px;
+	color: #444;
+}
+
+.mcm-nav {
+	border-bottom: 1px solid #666;
+	height: 44px;
+	width: 700px;
+}
+
+.mcm-nav .active,.mcm-nav a:active {
+	background: #444;
+}
+
+.mcm-nav a {
+	color: #fff;
+	display: block;
+	float: left;
+	font-size: 14px;
+	height: 43px;
+	line-height: 43px;
+	margin: 0 2px 0 0;
+	text-align: center;
+	width: 120px;
+	background: #999;
+}
+
+.icon-function,.btn-function,.btn-function02,.icon-edit,.icon-del,.icon-review,.icon-play,.icon-favorite,.icon-121,.icon-look,.icon-openclass,.icon-w-open,.icon-w-121,.icon-w-video,.icon-w-favorite,.icon-w-mail,.icon-w-msg
+	{
+	background: url("../images/icon-function.png") no-repeat scroll left
+		center rgba(0, 0, 0, 0);
+}
+
+.mc-container {
+	height: 430px;
+	margin-top: 20px;
+	width: 723px;
+}
+
+.mc-cline01 {
+	height: 200px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.mc-cline02 {
+	clear: both;
+	float: left;
+	height: 90px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.l-bimg {
+	float: left;
+	height: 100%;
+	width: 340px;
+}
+
+.l-bimg a {
+	background: url("about:blank") repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: #bfcedb;
+	text-decoration: none;
+}
+
+.l-bimg a img {
+	border: medium none;
+}
+
+.r-line-up {
+	float: left;
+	height: 100%;
+	width: 49.9% !important;
+}
+
+.spic-small {
+	margin-bottom: 20px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.spic-small ul {
+	list-style: outside none none;
+}
+
+.mc-container .spic-small li {
+	cursor: pointer;
+	float: left !important;
+	height: 90px;
+	margin: 0 0 0 20px !important;
+	position: relative;
+	width: 160px !important;
+}
+
+.spic-small li img {
+	height: 90px;
+	width: 160px;
+}
+
+.spic-nml li:first-child {
+	margin: 0 !important;
+}
+
+.spic-ftext {
+	background: url("../images/music-school-bg1.png") repeat scroll left top
+		rgba(0, 0, 0, 0);
+	cursor: pointer;
+	font-size: 14px;
+	height: 90px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 160px;
+}
+
+.mc-span-121 {
+	background: none repeat scroll 0 0 #00b4d4;
+}
+
+.mc-span-open,.mc-span-video,.mc-span-121 {
+	color: #fff;
+	font-size: 12px;
+	height: 22px;
+	left: 0;
+	line-height: 22px;
+	position: absolute;
+	top: 0;
+	width: 71px;
+}
+
+.icon-w-121 {
+	background-position: -550px -5px;
+	display: block;
+	float: left;
+	height: 22px;
+	width: 30px;
+}
+
+i {
+	font-style: normal;
+}
+
+.lesson-tit {
+	bottom: 4px;
+	left: 3px;
+	overflow: hidden;
+	position: absolute;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 156px;
+}
+
+.icon-w-open {
+	background-position: -520px -5px;
+	display: block;
+	float: left;
+	height: 22px;
+	width: 30px;
+}
+
+.icon-w-video {
+	background-position: -580px -6px;
+	display: block;
+	float: left;
+	height: 22px;
+	width: 30px;
+}
+
+.btn-smorecls {
+	background: url("../images/btn-seemore.png") repeat scroll left top
+		rgba(0, 0, 0, 0);
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+	text-indent: -1em;
+	width: 160px;
+}
+
+.mc-span-video {
+	background: none repeat scroll 0 0 #285bdb;
+}
+
+.mc-span-open,.mc-span-video,.mc-span-121 {
+	color: #fff;
+	font-size: 12px;
+	height: 22px;
+	left: 0;
+	line-height: 22px;
+	position: absolute;
+	top: 0;
+	width: 71px;
+}
+
+.mc-span-open {
+	background: none repeat scroll 0 0 #1579d7;
+}
+
+.certi-block {
+	float: left;
+	height: 25px;
+	width: 100px;
+}
+
+.margin-t-8 {
+	margin-top: 8px !important;
+}
+
+.file-upload {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.btn-file-hid {
+	cursor: pointer;
+	height: 25px !important;
+	left: 0;
+	margin-left: -10px;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 90px !important;
+}
+
+.upload-class {
+	clear: both;
+	float: left;
+	margin: 8px 0;
+	position: relative;
+}
+
+.upload-class img {
+	display: block;
+	height: 90px;
+	width: 160px;
+}
+
+.upload-class a {
+	background: url("../images/btn-img-del.png") no-repeat scroll center
+		center rgba(0, 0, 0, 0);
+	display: block;
+	height: 26px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+}
+
+.btn-file-dis {
+	/* background: url("../images/bg-btn-wite.png") repeat scroll 0 0 rgba(0, 0, 0, 0); */
+	background: #666;
+	height: 25px;
+	line-height: 23px;
+	text-align: center;
+	width: 80px;
+	color: #fff;
+}
+
+
+.selectObj_leftBlock,.selectObj_rightBlock{float:left;width:196px;}
+.selectObj_leftBlock ul,.selectObj_rightBlock ul{padding:5px 0;height:290px;border:1px #e0e5e7 solid;}
+.selectObj_leftBlock li,.selectObj_rightBlock li{padding:6px;}
+.selectObj_BtnWrap{ float:left; display:inline; padding-top:125px; width:80px; text-align:center; }
+.selectObj_Title{ height:22px; line-height:22px;}
+.selectObj_Title input{ vertical-align:text-bottom;}
+.selectObjList,.selectedObjList{overflow: auto; background-color:#fff;}
+.selectObjList li,.selectedObjList li{margin-bottom:1px!important; cursor: pointer;}
+.selectObjList .selected ,.selectedObjList .selected{background-color: #316AC5;color: #D5FFED;}

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.obanks.usp.mapper.RealNameAuthRecordMapper">
+
+	<resultMap id="BaseResultMap" type="cn.obanks.usp.model.RealNameAuthRecord">
+		<id column="ID" property="id" jdbcType="BIGINT" />
+		<result column="MER_ID" property="merId" jdbcType="VARCHAR" />
+		<result column="ORDER_NUMBER" property="orderNumber" jdbcType="VARCHAR" />
+		<result column="CARD_NUM" property="cardNum" jdbcType="VARCHAR" />
+		<result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+		<result column="ID_CARD" property="idCard" jdbcType="VARCHAR" />
+		<result column="PHONE_NUM" property="phoneNum" jdbcType="VARCHAR" />
+		<result column="SIGNATURE" property="signature" jdbcType="VARCHAR" />
+		<result column="RESP_CODE" property="respCode" jdbcType="VARCHAR" />
+		<result column="RESP_MSG" property="respMsg" jdbcType="VARCHAR" />
+		<result column="RESP_ELAPSED" property="respElapsed"  />
+		<result column="CREATED_DATE" property="createdDate" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID, MER_ID, ORDER_NUMBER, CARD_NUM, USER_NAME, ID_CARD, PHONE_NUM, SIGNATURE, RESP_CODE, RESP_MSG, RESP_ELAPSED, CREATED_DATE
+	</sql>
+
+	<insert id="add" parameterType="cn.obanks.usp.model.RealNameAuthRecord">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+		INSERT INTO REAL_NAME_AUTH_RECORD (
+		ID,
+		MER_ID,
+		ORDER_NUMBER,
+		CARD_NUM,
+		USER_NAME,
+		ID_CARD,
+		PHONE_NUM,
+		SIGNATURE,
+		CREATED_DATE
+		)
+		VALUES
+		(
+		#{id,jdbcType=BIGINT},
+		#{merId,jdbcType=VARCHAR},
+		#{orderNumber,jdbcType=VARCHAR},
+		#{cardNum,jdbcType=VARCHAR},
+		#{userName,jdbcType=VARCHAR},
+		#{idCard,jdbcType=VARCHAR},
+		#{phoneNum,jdbcType=VARCHAR},
+		#{signature,jdbcType=VARCHAR},
+		#{createdDate,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="merge" parameterType="cn.obanks.usp.model.RealNameAuthRecord">
+		update REAL_NAME_AUTH_RECORD
+		<set>
+			<if test="merId != null">
+				MER_ID = #{merId,jdbcType=VARCHAR},
+			</if>
+			<if test="orderNumber != null">
+				ORDER_NUMBER = #{orderNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="cardNum != null">
+				CARD_NUM = #{cardNum,jdbcType=VARCHAR},
+			</if>
+			<if test="userName != null">
+				USER_NAME = #{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="idCard != null">
+				ID_CARD = #{idCard,jdbcType=VARCHAR},
+			</if>
+			<if test="phoneNum != null">
+				PHONE_NUM = #{phoneNum,jdbcType=VARCHAR},
+			</if>
+			<if test="signature != null">
+				SIGNATURE = #{signature,jdbcType=VARCHAR},
+			</if>
+			<if test="respCode != null">
+				RESP_CODE = #{respCode,jdbcType=VARCHAR},
+			</if>
+			<if test="respMsg != null">
+				RESP_MSG = #{respMsg,jdbcType=VARCHAR},
+			</if>
+			<if test="respElapsed != null">
+				RESP_ELAPSED = #{respElapsed,jdbcType=BIGINT},
+			</if>
+			<if test="createdDate != null">
+				CREATED_DATE = #{createdDate,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=BIGINT}
+	</update>
+
+
+</mapper>

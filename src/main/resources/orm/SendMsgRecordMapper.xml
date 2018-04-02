@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.obanks.usp.mapper.SendMsgRecordMapper" >
+
+  <resultMap id="BaseResultMap" type="cn.obanks.usp.model.SendMsgRecord" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="CUSTOMER_ID" property="customerId" jdbcType="BIGINT" />
+    <result column="PROVIDER_ID" property="providerId" jdbcType="BIGINT" />
+    <result column="TEMPLATE_ID" property="templateId" jdbcType="BIGINT" />
+    <result column="PHONE_NUM" property="phoneNum" jdbcType="VARCHAR" />
+    <result column="CONTENT" property="content" jdbcType="VARCHAR" />
+    <result column="SIGNATURE" property="signature" jdbcType="VARCHAR" />
+    <result column="RESP_CODE" property="respCode" jdbcType="VARCHAR" />
+    <result column="RESP_MSG" property="respMsg" jdbcType="VARCHAR" />
+    <result column="RESP_ELAPSED" property="respElapsed" jdbcType="DECIMAL" />
+    <result column="CREATED_DATE" property="createdDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ID, CUSTOMER_ID, PROVIDER_ID, TEMPLATE_ID, PHONE_NUM, CONTENT, SIGNATURE, RESP_CODE, 
+    RESP_MSG, RESP_ELAPSED, CREATED_DATE
+  </sql>
+  
+  <insert id="add" parameterType="cn.obanks.usp.model.SendMsgRecord" >
+  	<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+	</selectKey>
+	INSERT INTO SEND_MSG_RECORD (
+	  ID,
+	  CUSTOMER_ID,
+	  PROVIDER_ID,
+	  TEMPLATE_ID,
+	  PHONE_NUM,
+	  CONTENT,
+	  SIGNATURE,
+	  CREATED_DATE
+	) 
+	VALUES
+	  (#{id,jdbcType=BIGINT},
+	  #{customerId,jdbcType=BIGINT},
+	  #{providerId,jdbcType=BIGINT}, 
+	  #{templateId,jdbcType=BIGINT},
+	  #{phoneNum,jdbcType=VARCHAR}, 
+	  #{content,jdbcType=VARCHAR}, 
+	  #{signature,jdbcType=VARCHAR},
+	  #{createdDate,jdbcType=TIMESTAMP}) 
+  </insert>
+  
+  <update id="merge" parameterType="cn.obanks.usp.model.SendMsgRecord" >
+	UPDATE 
+	  SEND_MSG_RECORD 
+	SET
+	  RESP_CODE = #{respCode,jdbcType=VARCHAR},
+	  RESP_MSG = #{respMsg,jdbcType=VARCHAR},
+	  RESP_ELAPSED = #{respElapsed,jdbcType=DECIMAL}
+	WHERE ID = #{id,jdbcType=BIGINT} 
+  </update>
+</mapper>

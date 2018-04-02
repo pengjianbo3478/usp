@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlrewrite
+    PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+    "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+
+<urlrewrite decode-using="UTF-8">
+	<rule>
+		<from>/authenticate.html</from>
+		<to>/realnameauthenticate/authenticate.do</to>
+	</rule>
+	
+	<rule>
+		<from>sendsms.html</from>
+		<to>/sendmsg/send.do</to>
+	</rule>
+	
+</urlrewrite>
+
+

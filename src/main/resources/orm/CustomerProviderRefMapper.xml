@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.obanks.usp.mapper.CustomerProviderRefMapper">
+
+	<resultMap id="BaseResultMap" type="cn.obanks.usp.model.CustomerProviderRef">
+		<id column="ID" jdbcType="BIGINT" property="id" />
+		<result column="CUSTOMER_ID" jdbcType="BIGINT" property="customerId" />
+		<result column="PROVIDER_ID" jdbcType="BIGINT" property="providerId" />
+		<result column="IS_DEFAULT" jdbcType="CHAR" property="isDefault" />
+		<result column="SERVICE_URL" jdbcType="VARCHAR" property="serviceUrl" />
+		<result column="PORT" jdbcType="VARCHAR" property="port" />
+		<result column="ACCOUNT" jdbcType="VARCHAR" property="account" />
+		<result column="AUTH_TOKEN" jdbcType="VARCHAR" property="authToken" />
+		<result column="APP_ID" jdbcType="VARCHAR" property="appId" />
+		<result column="CREATED_BY" jdbcType="BIGINT" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="UPDATED_BY" jdbcType="BIGINT" property="updatedBy" />
+		<result column="UPDATED_DATE" jdbcType="TIMESTAMP" property="updatedDate" />
+		<result column="DELETED_FLAG" jdbcType="CHAR" property="deletedFlag" />
+	</resultMap>
+
+	<select id="search" parameterType="cn.obanks.usp.model.CustomerProviderRef" resultMap="BaseResultMap">
+		SELECT * FROM CUSTOMER_PROVIDER_REF WHERE CUSTOMER_ID = #{customerId} AND IS_DEFAULT= #{isDefault}
+	</select>
+
+	<insert id="add" parameterType="cn.obanks.usp.model.CustomerProviderRef">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+		INSERT INTO CUSTOMER_PROVIDER_REF (
+		ID,
+		CUSTOMER_ID,
+		PROVIDER_ID,
+		IS_DEFAULT,
+		SERVICE_URL,
+		PORT,
+		ACCOUNT,
+		AUTH_TOKEN,
+		APP_ID,
+		CREATED_BY,
+		CREATED_DATE,
+		UPDATED_BY,
+		UPDATED_DATE,
+		DELETED_FLAG
+		)
+		VALUES
+		(#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{providerId,jdbcType=BIGINT},
+		#{isDefault,jdbcType=CHAR}, #{serviceUrl,jdbcType=VARCHAR}, #{port,jdbcType=VARCHAR},
+		#{account,jdbcType=VARCHAR}, #{authToken,jdbcType=VARCHAR}, #{appId,jdbcType=VARCHAR},
+		#{createdBy,jdbcType=BIGINT}, #{createdDate,jdbcType=TIMESTAMP}, #{updatedBy,jdbcType=BIGINT},
+		#{updatedDate,jdbcType=TIMESTAMP}, #{deletedFlag,jdbcType=CHAR})
+	</insert>
+
+</mapper>

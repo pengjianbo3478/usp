@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.obanks.usp.mapper.CustomerMapper">
+
+	<resultMap id="BaseResultMap" type="cn.obanks.usp.model.Customer">
+		<id column="ID" property="id" jdbcType="BIGINT" />
+		<result column="NAME" property="name" jdbcType="VARCHAR" />
+		<result column="SECRET_KEY" property="secretKey" jdbcType="VARCHAR" />
+		<result column="PUBLIC_KEY" property="publicKey" jdbcType="VARCHAR" />
+		<result column="CREATED_BY" property="createdBy" jdbcType="BIGINT" />
+		<result column="CREATED_DATE" property="createdDate" jdbcType="TIMESTAMP" />
+		<result column="UPDATED_BY" property="updatedBy" jdbcType="BIGINT" />
+		<result column="UPDATED_DATE" property="updatedDate" jdbcType="TIMESTAMP" />
+		<result column="DELETED_FLAG" property="deletedFlag" jdbcType="CHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID, NAME, SECRET_KEY, PUBLIC_KEY, CREATED_BY, CREATED_DATE, UPDATED_BY, UPDATED_DATE, DELETED_FLAG
+	</sql>
+
+	<select id="search" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		SELECT * FROM CUSTOMER WHERE ID = #{id}
+	</select>
+
+	<insert id="add" parameterType="cn.obanks.usp.model.Customer">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+		INSERT INTO CUSTOMER (
+		ID,
+		NAME,
+		SECRET_KEY,
+		PUBLIC_KEY,
+		CREATED_BY,
+		CREATED_DATE,
+		UPDATED_BY,
+		UPDATED_DATE,
+		DELETED_FLAG
+		)
+		VALUES
+		(
+		#{id},
+		#{name},
+		#{secretKey},
+		#{publicKey},
+		#{createdBy},
+		#{createdDate},
+		#{updatedBy},
+		#{updatedDate},
+		#{deletedFlag}
+		)
+	</insert>
+
+</mapper>

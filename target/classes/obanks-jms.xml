@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+				http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+				<!-- 
+				xmlns:jms="http://www.springframework.org/schema/jms" 
+				xmlns:aop="http://www.springframework.org/schema/aop"
+				xmlns:util="http://www.springframework.org/schema/util" 
+				
+				http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+				http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+				http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+	<jms:annotation-driven />
+	<jms:listener-container>
+		<jms:listener destination="${usp.sms.queue.name}" ref="sendMsgListener" method="sendMsg" concurrency="${usp.realname.queue.concurrency}" />
+		<jms:listener destination="${usp.realname.queue.name}" ref="realNameAuthenticateListener" method="authenticate" concurrency="${usp.sm.queue.concurrency}" />
+	</jms:listener-container>
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${jms.brokerURL}" />
+		<property name="userName" value="${jms.userName}" />
+		<property name="password" value="${jms.passWord}" />
+	</bean>
+				 -->
+
+	<rabbit:connection-factory id="connectionFactory" host="${usp.rabbitmq.host}" port="${usp.rabbitmq.port}" username="${usp.rabbitmq.username}" password="${usp.rabbitmq.password}" />
+	<rabbit:admin connection-factory="connectionFactory" />
+	<rabbit:queue name="${usp.sms.queue.name}" />
+	<rabbit:listener-container connection-factory="connectionFactory">
+		<rabbit:listener ref="sendMsgListener" method="sendMsg" queue-names="${usp.sms.queue.name}" />
+	</rabbit:listener-container>
+	<rabbit:topic-exchange name="${usp.sms.exchange.name}">
+		<rabbit:bindings>
+			<rabbit:binding queue="${usp.sms.queue.name}" pattern=".*" />
+		</rabbit:bindings>
+	</rabbit:topic-exchange>
+	<rabbit:template id="smsAmqpTemplate" connection-factory="connectionFactory" exchange="${usp.sms.exchange.name}" routing-key=".*" />
+<!-- 
+	<rabbit:template id="realnameAmqpTemplate" connection-factory="connectionFactory" exchange="${usp.realname.exchange.name}" routing-key=".*" />
+	<rabbit:queue name="${usp.realname.queue.name}" />
+	<rabbit:topic-exchange name="${usp.realname.exchange.name}">
+		<rabbit:bindings>
+			<rabbit:binding queue="${usp.realname.queue.name}" pattern=".*" />
+		</rabbit:bindings>
+	</rabbit:topic-exchange>
+	<rabbit:listener-container connection-factory="connectionFactory">
+		<rabbit:listener ref="realNameAuthenticateListener" method="authenticate" queue-names="${usp.realname.queue.name}" />
+	</rabbit:listener-container>
+ -->
+</beans>

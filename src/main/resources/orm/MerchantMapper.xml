@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.obanks.usp.mapper.MerchantMapper" >
+
+  <resultMap id="BaseResultMap" type="cn.obanks.usp.model.Merchant" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="MER_ID" property="merId" jdbcType="VARCHAR" />
+    <result column="MER_NAME" property="merName" jdbcType="VARCHAR" />
+    <result column="SECRET_KEY" property="secretKey" jdbcType="VARCHAR" />
+    <result column="PUBLIC_KEY" property="publicKey" jdbcType="VARCHAR" />
+    <result column="CREATED_DATE" property="createdDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ID, MER_ID, MER_NAME, SECRET_KEY, PUBLIC_KEY, CREATED_DATE
+  </sql>
+  
+  <select id="search" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    SELECT <include refid="Base_Column_List" /> FROM MERCHANT WHERE MER_ID = #{merId}
+  </select>
+  
+  
+</mapper>
